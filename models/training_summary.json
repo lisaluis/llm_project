@@ -1,0 +1,7 @@
+{
+  "training_examples": 100,
+  "epochs": 2,
+  "global_step": 50,
+  "training_loss": 1.1545674514770508,
+  "note": "Experimental SFT; examples were automatically screened, not clinically validated."
+}

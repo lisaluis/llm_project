@@ -1,7 +1,7 @@
 --extra-index-url https://download.pytorch.org/whl/cpu
 streamlit>=1.38
 torch
-transformers==4.57.6
-peft==0.21.2
+transformers      # replace with your Colab versions
+peft              # replace with your Colab version (adapters were saved with 0.21.2)
 accelerate
 safetensors
