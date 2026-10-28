@@ -1,0 +1,24 @@
+services:
+  - type: web
+    name: mental-health-llm-demo
+    runtime: python
+    plan: pro plus            # 8 GB RAM. "standard" (2 GB) and "pro" (4 GB) will run out of memory.
+    region: oregon
+    healthCheckPath: /_stcore/health
+    buildCommand: pip install --upgrade pip && pip install -r requirements.txt
+    startCommand: streamlit run app.py --server.port $PORT --server.address 0.0.0.0 --server.headless true
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: PYTHONUNBUFFERED
+        value: "1"
+      - key: TOKENIZERS_PARALLELISM
+        value: "false"
+      - key: BASE_MODEL_ID
+        value: Qwen/Qwen2.5-1.5B-Instruct
+      - key: SFT_ADAPTER_PATH
+        value: ./models/qwen_qlora_sft_100
+      - key: ORPO_ADAPTER_PATH
+        value: ./models/qwen_orpo_adapter
+      - key: CPU_DTYPE
+        value: bfloat16

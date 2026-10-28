@@ -1,0 +1,31 @@
+# secrets
+.env
+*.env
+*token*
+*secret*
+# python
+__pycache__/
+*.pyc
+.venv/
+venv/
+.ipynb_checkpoints/
+# training leftovers - NEVER push these
+checkpoint-*/
+optimizer.pt
+scheduler.pt
+scaler.pt
+rng_state.pth
+training_args.bin
+*.zip
+# datasets / review files (private, large)
+train.*
+test.*
+validation.*
+*.xlsx
+mental_health_project/
+mental_health_review_outputs/
+mental_health_full_backup*/
+# tokenizer copies are not needed (app loads tokenizer from the base model)
+models/**/tokenizer.json
+models/**/tokenizer_config.json
+models/**/chat_template.jinja
